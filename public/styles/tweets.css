@@ -7,47 +7,80 @@
    padding-bottom: 25px;
    margin-top: 25px;
    background: #F5F5F5;
+   max-height: 200px;
  }
 
- .container {
-   padding-top: 25px;
- }
+.container {
+  padding-top: 25px;
+}
 
- .tweet header {
-   overflow: auto;
-   background: #D3D3D3;
- }
+.tweet header {
+  overflow: auto;
+  background: #D3D3D3;
+}
 
-
- .tweet header img {
-   width: 50px;
-   height: 50px;
-   display: inline-block;
-   float: left;
-   margin-left: 5px;
-   margin-top: 5px;
- }
-
-  .tweet hr {
-    border: none;
-    height: 1px;
-    background-color: darkgrey;
- }
+.highlight header {
+  -webkit-transition-duration: .5s;
+     -moz-transition-duration: .5s;
+      -ms-transition-duration: .5s;
+       -o-transition-duration: .5s;
+          transition-duration: .5s;
+               background: skyblue;
+}
 
 
- .tweet header h2 {
-   float: left;
-   padding-left: 5px;
- }
 
-  .tweet header h4 {
-   float: right;
-   padding-right: 5px;
- }
+.tweet footer .icons {
+  display: inline-block;
+  padding-right: 5px;
+  float: right;
+}
 
- .tweet p {
-   padding-left: 5px;
- }
+.iconHighlight {
+  -webkit-transition-duration: .5s;
+     -moz-transition-duration: .5s;
+      -ms-transition-duration: .5s;
+       -o-transition-duration: .5s;
+          transition-duration: .5s;
+                    color: skyblue;
+}
+
+.tweet footer .timeposted {
+  display: inline-block;
+  padding-right: 5px;
+  float: left;
+}
+
+
+.tweet header img {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.tweet hr {
+  border: none;
+  height: 1px;
+  background-color: darkgrey;
+}
+
+
+.tweet header h2 {
+  float: left;
+  padding-left: 5px;
+}
+
+.tweet header h4 {
+  float: right;
+  padding-right: 5px;
+}
+
+.tweet p {
+  padding-left: 5px;
+}
 
  .tweet footer {
    padding-left: 5px;
