@@ -7,26 +7,103 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!-- Roboto Condensed Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- Tweets CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Character Count JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <hr>
+        <form action="/tweets/" method="POST">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter"></span>
+        </form>
+      </section>
+      <section class="container">
+        <article class="tweet">
+          <header>
+            <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt="Avatar">
+            <h2>Bardia Pourvakil</h1>
+            <h4>@thepericulum</h2>
+          </header>
+          <p>Little Tweet here</p>
+          <hr>
+          <footer>10 days ago</footer>
+        </article>
+        <article class="tweet">
+          <header>
+            <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt="Avatar">
+            <h2>Bardia Pourvakil</h1>
+            <h4>@thepericulum</h2>
+          </header>
+          <p>Little Tweet here</p>
+          <hr>
+          <footer>10 days ago</footer>
+        </article>
+        <article class="tweet">
+          <header>
+            <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt="Avatar">
+            <h2>Bardia Pourvakil</h1>
+            <h4>@thepericulum</h2>
+          </header>
+          <p>Little Tweet here</p>
+          <hr>
+          <footer>10 days ago</footer>
+        </article>
+        <article class="tweet">
+          <header>
+            <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt="Avatar">
+            <h2>Bardia Pourvakil</h1>
+            <h4>@thepericulum</h2>
+          </header>
+          <p>Little Tweet here</p>
+          <hr>
+          <footer>10 days ago</footer>
+        </article>
+        <article class="tweet">
+          <header>
+            <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-hacker-3830b32ad9e0802c-512x512.png" alt="Avatar">
+            <h2>Bardia Pourvakil</h1>
+            <h4>@thepericulum</h2>
+          </header>
+          <p>Little Tweet here</p>
+          <hr>
+          <footer>10 days ago</footer>
+        </article>
+
+      </section>
     </main>
 
   </body>
