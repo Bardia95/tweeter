@@ -27,7 +27,7 @@ $(document).ready(function() {
 
   function renderTweets(data) {
     data.forEach(element => {
-          $('.container').append(createTweetElement(element));
+      $('.container').prepend(createTweetElement(element));
     });
   };
 
@@ -37,34 +37,19 @@ $(document).ready(function() {
           method: 'POST',
           url: '/tweets',
           data: $(this).serialize()
-      }).done(function () {
-          renderTweets(data);
+      }).done(function() {
+        loadTweets();
       });
   });
 
   function loadTweets() {
     $.get('/tweets').then(function (jsonContent) {
+        $('.container').empty();
         renderTweets(jsonContent);
     });
   };
 
   loadTweets();
-
-  // Tweet hover function
-  $(".tweet").hover(function() {
-    $(this).addClass("highlight");
-  }, function(){
-    $(this).removeClass("highlight");
-  });
-
-  // Icon hover function
-  $(".fas").hover(function() {
-    console.log(this);
-    $(this).addClass("iconHighlight");
-  }, function() {
-    console.log(this);
-    $(this).removeClass("iconHighlight");
-  });
 });
 
 

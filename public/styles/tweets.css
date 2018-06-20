@@ -19,8 +19,8 @@
   background: #D3D3D3;
 }
 
-.highlight header {
-  -webkit-transition-duration: .5s;
+.tweet:hover header {
+   -webkit-transition-duration: .5s;
      -moz-transition-duration: .5s;
       -ms-transition-duration: .5s;
        -o-transition-duration: .5s;
@@ -29,15 +29,14 @@
 }
 
 
-
 .tweet footer .icons {
   display: inline-block;
   padding-right: 5px;
   float: right;
 }
 
-.iconHighlight {
-  -webkit-transition-duration: .5s;
+.tweet footer .fas:hover {
+    -webkit-transition-duration: .5s;
      -moz-transition-duration: .5s;
       -ms-transition-duration: .5s;
        -o-transition-duration: .5s;
@@ -60,6 +59,8 @@
   margin-left: 5px;
   margin-top: 5px;
 }
+
+
 
 .tweet hr {
   border: none;
