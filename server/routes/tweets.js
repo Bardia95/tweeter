@@ -9,13 +9,10 @@ module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
     DataHelpers.getTweets((err, tweets) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-      } else {
-        res.json(tweets);
-      }
+      if (err) throw err;
+      res.json(tweets);
+      });
     });
-  });
 
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
