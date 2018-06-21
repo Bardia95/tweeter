@@ -42,6 +42,7 @@
        -o-transition-duration: .5s;
           transition-duration: .5s;
                     color: skyblue;
+                    cursor: pointer;
 }
 
 .tweet footer .timeposted {

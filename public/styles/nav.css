@@ -8,6 +8,31 @@
   padding-right: 2em;
 }
 
+#nav-bar button {
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+      background-color: #fff;
+      border: 0px;
+      color: skyblue;
+      float: right;
+      margin-top: 15px;
+      height: 50px;
+      width: 110px;
+      cursor: pointer;
+}
+
+#nav-bar button:hover {
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+      border-color: #fff;
+      background-color: skyblue;
+      color: #fff;
+}
+
+
+
+
+
 #nav-bar .logo {
   height: 80px;
   width:  80px;

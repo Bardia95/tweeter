@@ -1,4 +1,20 @@
 $(document).ready(function() {
+
+  $('#compose').click(function() {
+    if ($(".new-tweet").is( ":hidden" ) ) {
+      $(".new-tweet").slideDown();
+      $("#text-area").focus();
+    } else {
+      $(".new-tweet").slideUp();
+    }
+  })
+
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   var d = new Date();
   var time = d.getTime();
   var createTweetElement = function(tweet) {
@@ -9,7 +25,7 @@ $(document).ready(function() {
           <h2>${tweet.user.name}</h1>
           <h4>${tweet.user.handle}</h2>
         </header>
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
         <hr>
         <footer>
           <div class='timeposted'>
@@ -32,14 +48,24 @@ $(document).ready(function() {
   };
 
   $('#tweet-form').on('submit', function (event) {
-      event.preventDefault();
+    event.preventDefault();
+    let errors = $(this).siblings('#submiterrors')
+    errors.empty();
+    let tweettext = $(this).find('textarea').val().trim();
+    // Form validation, not null, not empty, not over char limit
+    if (tweettext != null && tweettext != "" && tweettext != " " && tweettext.length <= 140) {
       $.ajax({
-          method: 'POST',
-          url: '/tweets',
-          data: $(this).serialize()
+        method: 'POST',
+        url: '/tweets',
+        data: $(this).serialize()
       }).done(function() {
         loadTweets();
       });
+    } else if (tweettext == null || tweettext == "" || $tweettext == " ") {
+      errors.append("<p>Tweet can't be empty or null</p>");
+    } else if (tweettext.length <= 140) {
+      errors.append("<p>Tweet can't be over 140 characters</p>");
+    }
   });
 
   function loadTweets() {
