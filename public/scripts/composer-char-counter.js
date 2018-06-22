@@ -1,5 +1,6 @@
 let maxChar = 140;
 
+// Make character counter for tweets go red after 140 characters
 $(document).ready(function() {
   $('textarea').bind('input', function() {
     let counter = $(this).val().length;

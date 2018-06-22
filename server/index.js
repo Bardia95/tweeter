@@ -1,16 +1,21 @@
+// Use .env
 require('dotenv').config();
 
 "use strict";
 
 // Basic express setup:
 
-const PORT          = 5000;
-const express       = require("express");
-const bodyParser    = require("body-parser");
-const app           = express();
+const PORT                                          = 5000;
+const express                         = require("express");
+const bodyParser                  = require("body-parser");
+const app                                      = express();
 const nodeSassMiddleware = require('node-sass-middleware');
-const path = require('path');
+const path =                               require('path');
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// Setting node sass middleware
 app.use(nodeSassMiddleware({
     src: path.join(__dirname, '../styles'),
     dest: path.join(__dirname, '../public'),
@@ -19,12 +24,14 @@ app.use(nodeSassMiddleware({
 }));
 
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(bodyParser.urlencoded({ extended: true }));
 
+
+// Use MongoDB
 const {MongoClient} = require("mongodb");
 const MONGODB_URI = process.env.MONGODB_URI;
 
 
+// Connect to database
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
     console.error(`Failed to connect: ${MONGODB_URI}`);

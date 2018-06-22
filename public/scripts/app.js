@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // Show/hide tweet button
   $('#compose').click(function() {
     if ($(".new-tweet").is( ":hidden" ) ) {
       $(".new-tweet").slideDown();
@@ -9,14 +10,14 @@ $(document).ready(function() {
     }
   })
 
+  // Escape string function for safe HTML
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  var d = new Date();
-  var time = d.getTime();
+  // Creating tweet component from submission data
   var createTweetElement = function(tweet) {
     let newHTML =
     `<article class='tweet'>
@@ -41,12 +42,14 @@ $(document).ready(function() {
     return newHTML;
   }
 
+  // Render tweets
   function renderTweets(data) {
     data.forEach(element => {
       $('.container').prepend(createTweetElement(element));
     });
   };
 
+  // Handling tweet submission
   $('#tweet-form').on('submit', function (event) {
     event.preventDefault();
     let errors = $(this).siblings('#submiterrors')
@@ -68,13 +71,15 @@ $(document).ready(function() {
     }
   });
 
+  // Function for loading tweets from database
   function loadTweets() {
     $.get('/tweets').then(function (jsonContent) {
-        $('.container').empty();
-        renderTweets(jsonContent);
+      $('.container').empty();
+      renderTweets(jsonContent);
     });
   };
 
+  // Load all tweets
   loadTweets();
 });
 
