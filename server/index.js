@@ -9,13 +9,14 @@ const app           = express();
 const nodeSassMiddleware = require('node-sass-middleware');
 const path = require('path');
 
-app.use(sassMiddleware({
-    src: path.join(__dirname, 'scss'),
-    dest: path.join(__dirname, '../public/styles'),
+app.use(nodeSassMiddleware({
+    src: path.join(__dirname, '../styles'),
+    dest: path.join(__dirname, '../public'),
     debug: true,
     outputStyle: 'compressed',
 }));
-app.use(express.static('public'));
+
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const {MongoClient} = require("mongodb");
