@@ -26,8 +26,8 @@ $(document).ready(function() {
           <h4>${tweet.user.handle}</h2>
         </header>
         <p>${escape(tweet.content.text)}</p>
-        <hr>
         <footer>
+        <hr>
           <div class='timeposted'>
             ${moment(tweet.created_at).fromNow()}
           </div>
