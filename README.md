@@ -27,6 +27,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of tweet compose box"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweet-box.png)
-!["Screenshot of tweets"](https://github.com/lighthouse-labs/tweeter/blob/master/docs/tweets.png)
-That will have added the screenshots to your README file.
+!["Screenshot of home page with compose hidden"](https://github.com/Bardia95/tweeter/blob/master/docs/home-compose-hidden.png)
+!["Screenshot of home page with compose visible"](https://github.com/Bardia95/tweeter/blob/master/docs/home-compose-visible.png)
