@@ -8,8 +8,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 1. Fork this repository, then clone your fork of this repository.
 2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:5000/>.
-4. Go to <http://localhost:5000/> in your browser.
+3. Create a .env file and put this line in: MONGODB_URI=mongodb://localhost:27017/tweeter
+4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:5000/>.
+5. Go to <http://localhost:5000/> in your browser.
 
 ## Dependencies
 

@@ -64,9 +64,10 @@ $(document).ready(function() {
       }).done(function() {
         loadTweets();
       });
+      $(this).find('textarea').val('');
     } else if (tweettext == null || tweettext == "" || $tweettext == " ") {
       errors.append("<p>Tweet can't be empty or null</p>");
-    } else if (tweettext.length <= 140) {
+    } else if (tweettext.length > 140) {
       errors.append("<p>Tweet can't be over 140 characters</p>");
     }
   });
