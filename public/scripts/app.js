@@ -21,24 +21,24 @@ $(document).ready(function() {
   var createTweetElement = function(tweet) {
     let newHTML =
     `<article class='tweet'>
-        <header>
-          <img src=${tweet.user.avatars.small} alt='Avatar'>
-          <h2>${tweet.user.name}</h1>
-          <h4>${tweet.user.handle}</h2>
-        </header>
-        <p>${escape(tweet.content.text)}</p>
-        <footer>
-        <hr>
-          <div class='timeposted'>
-            ${moment(tweet.created_at).fromNow()}
-          </div>
-          <div class='icons'>
-            <i class='fas fa-flag'></i>
-            <i class='fas fa-retweet'></i>
-            <i class='fas fa-heart'></i>
-          </div>
-        </footer>
-      </article>`
+      <header>
+        <img src=${tweet.user.avatars.small} alt='Avatar'>
+        <h2>${tweet.user.name}</h1>
+        <h4>${tweet.user.handle}</h2>
+      </header>
+      <p>${escape(tweet.content.text)}</p>
+      <footer>
+      <hr>
+        <div class='timeposted'>
+          ${moment(tweet.created_at).fromNow()}
+        </div>
+        <div class='icons'>
+          <i class='fas fa-flag'></i>
+          <i class='fas fa-retweet'></i>
+          <i class='fas fa-heart'></i>
+        </div>
+      </footer>
+    </article>`
     return newHTML;
   }
 

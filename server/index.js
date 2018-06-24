@@ -17,10 +17,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Setting node sass middleware
 app.use(nodeSassMiddleware({
-    src: path.join(__dirname, '../styles'),
-    dest: path.join(__dirname, '../public'),
-    debug: true,
-    outputStyle: 'compressed',
+  src: path.join(__dirname, '../styles'),
+  dest: path.join(__dirname, '../public'),
+  debug: true,
+  outputStyle: 'compressed',
 }));
 
 app.use(express.static(path.join(__dirname, '../public')));
