@@ -55,8 +55,9 @@ $(document).ready(function() {
     let errors = $(this).siblings('#submiterrors')
     errors.empty();
     let tweettext = $(this).find('textarea').val().trim();
+    console.log(tweettext);
     // Form validation, not null, not empty, not over char limit
-    if (tweettext != null && tweettext != "" && tweettext != " " && tweettext.length <= 140) {
+    if (tweettext != null && tweettext != "" && tweettext.length <= 140) {
       $.ajax({
         method: 'POST',
         url: '/tweets',
@@ -65,7 +66,7 @@ $(document).ready(function() {
         loadTweets();
       });
       $(this).find('textarea').val('');
-    } else if (tweettext == null || tweettext == "" || $tweettext == " ") {
+    } else if (tweettext == null || tweettext == "") {
       errors.append("<p>Tweet can't be empty or null</p>");
     } else if (tweettext.length > 140) {
       errors.append("<p>Tweet can't be over 140 characters</p>");
